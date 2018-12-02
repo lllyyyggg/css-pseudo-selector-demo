@@ -1,48 +1,186 @@
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](htt
 # css-pseudo-selector-demo
 位类和伪元素和选择器
+
+
+
+### `伪类`
+
+```
+a:link	//未访问的链接
+a:visited //已访问的链接
+a:hover //鼠标移动到链接上
+a:active //选定的链接
+```
+
+```
+例: a.red:visited， 被访问过的.red类的a标签的样式 
+```
+
+-
+```
+<div>
+	<p>These are the necessary steps:</p>
+	<ul>
+		<li>Intert Key</li>
+		<li>Turn key <strong>clockwise</strong></li>
+		<li>Push accelerator</li>
+	</ul>
+	<p>Do <em>not</em> push the brake at the same time as the accelerator.</p>
+</div>
+```
+
+在上面的例子中，作为第一个元素的元素包括第一个 p、第一个 li 和 strong 和 em 元素。
+
+-
+
+匹配所有\<p\> 元素中的第一个 \<i\> 元素
+
+```
+<html>
+<head>
+<style type="text/css">
+	p > i:first-child {	//选择器匹配所有 <p> 元素中的第一个 <i> 元素：
+  	 font-weight:bold;
+   } 
+</style>
+</head>
+
+<body>
+<p>some <i>text</i>. some <i>text</i>.</p>
+<p>some <i>text</i>. some <i>text</i>.</p>
+</body>
+</html>
+```
+
+-
+
+匹配所有作为第一个子元素的\<p\> 元素中的所有\<i\> 元素
+
+```
+<html>
+<head>
+<style type="text/css">
+	  p:first-child i {
+	  	color:blue;
+	  } 
+</style>
+</head>
+
+<body>
+	<p>some <i>text</i>. some <i>text</i>.</p>
+	<p>some <i>text</i>. some <i>text</i>.</p>
+</body>
+</html>
+```
+
+-
+
+:lang 伪类
+
+:lang 伪类使你有能力为不同的语言定义特殊的规则。向带有指定 lang 属性的元素添加样式。
+
+```
+<html>
+<head>
+
+<style type="text/css">
+		q:lang(no)
+	   {
+	  	 quotes: "~" "~"
+	   }
+</style>
+
+</head>
+	<body>
+		<p>文字<q lang="no">段落中的引用的文字</q>文字</p>
+	</body>
+</html>
+```
+
+
+### `伪元素`
+
+:first-line,用于第一行文本进行格式化
+
+```
+.slogan:first-line {
+    color: red;
+}
+```
+
+
+> 注释："first-line" 伪元素只能用于块级元素。
+
+> 注释：下面的属性可应用于 "first-line" 伪元素：
+> 
+* font
+* color
+* background
+* word-spacing
+* letter-spacing
+* text-decoration
+* vertical-align
+* text-transform
+* line-height
+* clear
+
+
+"first-letter" 伪元素用于向文本的首字母设置特殊样式：
+
+```
+.slogan:first-letter {
+    font-size: 300px;
+}
+```
+> 注释："first-letter" 伪元素只能用于块级元素。
+
+
+":before" 伪元素可以在元素的内容前面插入新内容。
+":after" 伪元素可以在元素的内容之后插入新内容。
+
+```
+h1:before/after
+{
+  content:url(logo.gif);
+}
+```
+
+### `选择器`
+
+`.important.warning`,这样的选择器只能选择比这两个类更多的类修饰的元素。
+
+属性选择器
+
+```
+a[href] {color:red;} //包含href的
+a[href][title] {color:red;} //同时包含href和title的
+a[href="http://www.w3school.com.cn/about_us.asp"] {color: red;} //属性满足该条件的
+p[class~="important"] {color: red;} //class中包含important的
+[abc^="def"]	//以def开头
+[abc$="def"]	//def结尾
+[abc*="def"]	//包含def
+```
+
+后代选择器
+
+```
+h1 em {color:red;}
+```
+
+子元素选择器
+
+```
+h1 > strong {color:red;}
+```
+
+相邻兄弟选择器
+
+```
+h1 + p {margin-top:50px;}
+```
+这个选择器读作：“选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素”。
+
+
+
+
 
