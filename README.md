@@ -182,5 +182,11 @@ h1 + p {margin-top:50px;}
 
 
 
+### `实例`
 
+<div style='text-align:center;'>
+	<img src='./todo.gif' style='width:100%;height:300px'>
+</div>
+
+该实例运行了多种选择器和过渡效果。
 

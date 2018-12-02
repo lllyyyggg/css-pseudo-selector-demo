@@ -1,3 +1,44 @@
-.test.test2 {
-    color: brown;
+body {
+    padding-top: 180px;
+}
+div.head > h2{
+    text-align: center;
+    margin: 0;
+}
+
+div.body {
+    /* 默认是100%的宽度 */
+    padding: 50px 200px 50px 200px;
+}
+
+.body div{
+    width: 0px;
+    height: 0px;
+    margin: 30px 30px 30px 30px;
+    transition: height 0.5s, width 0.8s;
+    transition-delay: 0.5s;
+}
+
+.full {
+    height: 80px !important;
+    width: 100% !important;
+}
+
+.body .first {
+    background-color: red;
+}
+.body .second {
+    background-color: blue;
+}
+.body .third {
+    background-color: yellow;
+}
+.body .forth {
+    background-color: green;
+}
+.body .fifth {
+    background-color: goldenrod;
+}
+.body .sixth {
+    background-color: brown;
 }
