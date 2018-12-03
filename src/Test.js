@@ -24,20 +24,30 @@ class Test extends React.Component {
     }
     render() {
         return (
-            <div id='parent'>
-                <div className='head'>
-                    <h2>2018年10月10日</h2>
-                    <h2>星期一</h2>
+            <div>
+                <div id='parent'>
+                    <div className='head'>
+                        <h2>2018年10月10日</h2>
+                        <h2>星期一</h2>
+                    </div>
+                    <div className='body'>
+                        <div className='first content'></div>
+                        <div className='second content'></div>
+                        <div className='third content'></div>
+                        {/* <div className='forth content'></div>
+                        <div className='fifth content'></div>
+                        <div className='sixth content'></div> */}
+                    </div>
                 </div>
-                <div className='body'>
-                    <div className='first content'></div>
-                    <div className='second content'></div>
-                    <div className='third content'></div>
-                    <div className='forth content'></div>
-                    <div className='fifth content'></div>
-                    <div className='sixth content'></div>
+                <div id='parent2'>
+                        <div>
+                            <div>Hello World</div>
+                        </div>
+                        <div>
+                            <div>Hello Lanyage</div>
+                        </div>
                 </div>
-            </div>
+            </div>            
         )
     }
 } 

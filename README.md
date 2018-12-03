@@ -190,3 +190,28 @@ h1 + p {margin-top:50px;}
 
 该实例运行了多种选择器和过渡效果。
 
+```
+<div id='parent2'>
+                        <div>
+                            <div>Hello World</div>
+                        </div>
+                        <div>
+                            <div>Hello Lanyage</div>
+                        </div>
+</div>
+```        
+
+```
+#parent2 > div:first-child{
+    /* #parent2  div:first-child{ 代表#parent2下的所有:first-child */
+    padding: 10px 50px ;
+    background-color: #0086ff;
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+}
+```
+        
+那么只有直接子元素会有这样的样式。
+
+        

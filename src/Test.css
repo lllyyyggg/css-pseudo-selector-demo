@@ -33,7 +33,7 @@ div.body {
 .body .third {
     background-color: yellow;
 }
-.body .forth {
+/* .body .forth {
     background-color: green;
 }
 .body .fifth {
@@ -41,4 +41,17 @@ div.body {
 }
 .body .sixth {
     background-color: brown;
+} */
+
+
+
+
+
+#parent2 > div:first-child{
+    /* #parent2  div:first-child{ 代表#parent2下的所有:first-child */
+    padding: 10px 50px ;
+    background-color: #0086ff;
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
 }
