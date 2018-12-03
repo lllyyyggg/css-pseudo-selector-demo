@@ -43,10 +43,6 @@ div.body {
     background-color: brown;
 } */
 
-
-
-
-
 #parent2 > div:first-child{
     /* #parent2  div:first-child{ 代表#parent2下的所有:first-child */
     padding: 10px 50px ;
